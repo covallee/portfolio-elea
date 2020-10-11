@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@font-face {
+  font-family: 'Sporting Grotesque';
+  src: url('~assets/fonts/Regular/Sporting_Grotesque-Regular_web.eot');
+  src: url('~assets/fonts/Regular/Sporting_Grotesque-Regular_web.eot?#iefix')
+      format('embedded-opentype'),
+    url('~assets/fonts/Regular/Sporting_Grotesque-Regular_web.woff')
+      format('woff'),
+    url('~assets/fonts/Regular/Sporting_Grotesque-Regular_web.woff2')
+      format('woff2'),
+    url('~assets/fonts/Regular/Sporting_Grotesque-Regular_web.ttf')
+      format('truetype'),
+    url('~assets/fonts/Regular/Sporting_Grotesque-Regular_web.svg#svgFontName')
+      format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sporting Grotesque';
+  src: url('~assets/fonts/Bold/Sporting_Grotesque-Bold_web.eot');
+  src: url('~assets/fonts/Bold/Sporting_Grotesque-Bold_web.eot?#iefix')
+      format('embedded-opentype'),
+    url('~assets/fonts/Bold/Sporting_Grotesque-Bold_web.woff') format('woff'),
+    url('~assets/fonts/Bold/Sporting_Grotesque-Bold_web.woff2') format('woff2'),
+    url('~assets/fonts/Bold/Sporting_Grotesque-Bold_web.ttf') format('truetype'),
+    url('~assets/fonts/Bold/Sporting_Grotesque-Bold_web.svg#svgFontName')
+      format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
