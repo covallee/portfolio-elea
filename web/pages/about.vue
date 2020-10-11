@@ -4,30 +4,30 @@
       <div class="about__block">
         <h2 class="title">About</h2>
         <BlockContent
+          v-if="mainPhotograph.bio"
           :blocks="mainPhotograph.bio"
-          :v-if="mainPhotograph.bio"
           class-name="about"
         />
       </div>
       <div class="about__block">
         <h3 class="title">Exhibitons</h3>
         <BlockContent
+          v-if="mainPhotograph.exhibitions"
           :blocks="mainPhotograph.exhibitions"
-          :v-if="mainPhotograph.exhibitions"
         />
       </div>
       <div class="about__block">
         <h3 class="title">Publications</h3>
         <BlockContent
+          v-if="mainPhotograph.publications"
           :blocks="mainPhotograph.publications"
-          :v-if="mainPhotograph.publications"
         />
       </div>
       <div class="about__block">
         <h3 class="title">Education</h3>
         <BlockContent
+          v-if="mainPhotograph.bio"
           :blocks="mainPhotograph.education"
-          :v-if="mainPhotograph.bio"
         />
       </div>
     </div>

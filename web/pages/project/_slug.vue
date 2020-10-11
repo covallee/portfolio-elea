@@ -2,7 +2,7 @@
   <section class="project__container">
     <div class="project__desc">
       <h2 class="title">{{ title }}</h2>
-      <BlockContent :blocks="overview" :v-if="overview" />
+      <BlockContent v-if="overview" :blocks="overview" />
     </div>
     <Slider :photos="photos" />
   </section>
@@ -35,6 +35,11 @@ export default {
     Slider,
     BlockContent,
   },
+  // validate({ params, store, query }) {
+  //   return (
+
+  //   )
+  // },
   async asyncData({ params }) {
     return await sanityClient.fetch(query, params)
   },
