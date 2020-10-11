@@ -1,18 +1,18 @@
-import sanityClient from './sanityClient'
+// import sanityClient from './sanityClient'
 
-const routesQuery = `
-  {
-    "project": *[_type == "project"],
-    "photograph": *[_type == "photograph" && defined(slug.current)]
-  }
-`
+// const routesQuery = `
+//   {
+//     "project": *[_type == "project"],
+//   }
+// `
 
 export default {
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
-  target: 'server',
+  ssr: true,
+  target: 'static',
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -94,14 +94,11 @@ export default {
    ** Used only for generating static served HTML files
    */
   generate: {
-    routes: () => {
-      return sanityClient.fetch(routesQuery).then((res) => {
-        return [
-          ...res.sessions.map((item) => `/project/${item.slug.current}`),
-          ...res.speakers.map((item) => `/photograph/${item.slug.current}`),
-        ]
-      })
-    },
+    // routes: () => {
+    //   return sanityClient.fetch(routesQuery).then((res) => {
+    //     return [...res.sessions.map((item) => `/project/${item.slug.current}`)]
+    //   })
+    // },
   },
   /*
    ** Build configuration
