@@ -4,7 +4,11 @@
       <h1>
         <nuxt-link to="/" class="logo">Elea Jeanne Schmitter</nuxt-link>
       </h1>
-      <button class="nav__burger" @click="isBurger = !isBurger">
+      <button
+        class="nav__burger"
+        aria-label="open menu"
+        @click="isBurger = !isBurger"
+      >
         <Burger :is-open="isBurger" />
       </button>
     </div>
