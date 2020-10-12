@@ -18,6 +18,9 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
+    htmlAttrs: {
+      lang: 'en',
+    },
     title: 'Elea Jeanne Schmitter',
     meta: [
       { charset: 'utf-8' },
@@ -56,11 +59,6 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', size: '16x16', href: '/favicon16x16.png' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Montserrat&display=swap',
-      },
     ],
   },
   /*
