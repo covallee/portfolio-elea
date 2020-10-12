@@ -21,27 +21,33 @@ export default {
       },
     },
     {
-      name: "overview",
-      title: "Overview",
-      type: "blockContent",
-    },
-    {
-      name: "releaseDate",
-      title: "Release date",
-      type: "datetime",
-    },
-    {
-      name: "externalId",
-      title: "External ID",
-      type: "number",
-    },
-    {
       name: "poster",
       title: "Poster Image",
       type: "image",
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: "caption",
+          type: "string",
+          title: "Caption",
+          options: {
+            isHighlighted: true,
+          },
+        },
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative text",
+          description: "Important for accessibility.",
+          validation: (Rule) =>
+            Rule.error("You have to fill out the alternative text.").required(),
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
     },
     {
       name: "categories",
@@ -61,6 +67,21 @@ export default {
       title: "Photograph",
       type: "reference",
       to: [{ type: "photograph" }],
+    },
+    {
+      name: "overview",
+      title: "Overview",
+      type: "blockContent",
+    },
+    {
+      name: "releaseDate",
+      title: "Release date",
+      type: "datetime",
+    },
+    {
+      name: "externalId",
+      title: "External ID",
+      type: "number",
     },
   ],
   preview: {
