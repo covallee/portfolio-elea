@@ -15,12 +15,29 @@
     <nav>
       <ul class="nav__inner" :class="{ visible: isBurger }">
         <li>
-          <button class="nav__item" @click="isVisible = !isVisible">
+          <button class="nav__item" @click="isWorksVisible = !isWorksVisible">
             Works
           </button>
-          <ul class="nav__dropdown" :class="{ visible: isVisible }">
+          <ul class="nav__dropdown" :class="{ visible: isWorksVisible }">
             <li v-for="project in projects" :key="project._id">
               <nuxt-link
+                v-if="!project.isVideo"
+                :to="'/project/' + project.link"
+                class="nav__item"
+                @click.native="handler"
+                >{{ project.title }}</nuxt-link
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <button class="nav__item" @click="isVideosVisible = !isVideosVisible">
+            Videos
+          </button>
+          <ul class="nav__dropdown" :class="{ visible: isVideosVisible }">
+            <li v-for="project in projects" :key="project._id">
+              <nuxt-link
+                v-if="project.isVideo"
                 :to="'/project/' + project.link"
                 class="nav__item"
                 @click.native="handler"
@@ -40,6 +57,7 @@
           >
         </li>
       </ul>
+      <SocialMedia />
       <div class="nav__copy">Copyright © All rights reserved.</div>
     </nav>
   </div>
@@ -54,7 +72,8 @@ export default {
   },
   data() {
     return {
-      isVisible: false,
+      isWorksVisible: false,
+      isVideosVisible: false,
       isBurger: false,
     }
   },
@@ -169,10 +188,6 @@ export default {
 .nav__item:hover,
 .nav__item:focus {
   color: #0031ee;
-}
-
-ul {
-  list-style-type: none;
 }
 
 .nav__copy {

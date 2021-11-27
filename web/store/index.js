@@ -27,6 +27,7 @@ const query = `
   *[_type == 'project' && isVisible == true] {
     _id,
     title,
+    isVideo,
     "link": slug.current
   }
 `

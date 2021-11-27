@@ -26,6 +26,11 @@ export default {
       type: "boolean",
     },
     {
+      name: "isVideo",
+      title: "Video Category",
+      type: "boolean",
+    },
+    {
       name: "overview",
       title: "Overview",
       type: "blockContent",
@@ -62,7 +67,8 @@ export default {
     },
   ],
   initialValue: {
-    isVisible: false
+    isVisible: false,
+    isVideo: false,
   },
   preview: {
     select: {
