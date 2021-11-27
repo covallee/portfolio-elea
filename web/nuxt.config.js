@@ -102,6 +102,9 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
+  buildModules: [
+    '@nuxt/postcss8'
+  ],
   build: {
     postcss: {
       // Add plugin names as key and arguments as value
@@ -111,5 +114,10 @@ export default {
         'postcss-nesting': {},
       },
     },
+    babel:{
+      plugins: [
+        ['@babel/plugin-proposal-private-methods', { loose: true }]
+      ]
+    }
   },
 }
