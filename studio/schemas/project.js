@@ -21,6 +21,11 @@ export default {
       },
     },
     {
+      name: "isVisible",
+      title: "Show Live",
+      type: "boolean",
+    },
+    {
       name: "overview",
       title: "Overview",
       type: "blockContent",
@@ -56,6 +61,9 @@ export default {
       ],
     },
   ],
+  initialValue: {
+    isVisible: false
+  },
   preview: {
     select: {
       title: "title",
