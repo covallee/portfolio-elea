@@ -69,7 +69,24 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  // Script tags
+  script: [
+    // Fathom Analytics
+    {
+        // Use your Fathom custom domain if you have one
+        src: 'https://cdn.usefathom.com/script.js',
+        'data-site': 'CQXPHGVT',
+        'defer': true
+    }
+  ],
+    router: {
+      middleware: [
+          'fathom'
+      ]
+  },
+  plugins: [
+    {src: '~/plugins/vimeo-player.client.js'}
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
