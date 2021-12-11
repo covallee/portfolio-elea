@@ -11,6 +11,7 @@ import project from "./project";
 import blockContent from "./blockContent";
 import category from "./category";
 import siteSettings from "./siteSettings";
+import video from "./video";
 
 // Object
 import bioPortableText from "./objects/bioPortableText";
@@ -18,6 +19,7 @@ import openGraph from "./objects/openGraph";
 import mainImage from "./objects/mainImage";
 
 import photoReference from "./photoReference";
+import videoReference from "./videoReference";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,10 +34,12 @@ export default createSchema({
     project,
     blockContent,
     photoReference,
+    videoReference,
     bioPortableText,
     category,
     siteSettings,
     openGraph,
     mainImage,
+    video,
   ]),
 });

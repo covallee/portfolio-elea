@@ -17,6 +17,7 @@ export default () =>
             .views([S.view.form()])
         ),
       photo,
+      S.documentTypeListItem("video").title("Videos"),
       S.documentTypeListItem("project").title("Project"),
       S.documentTypeListItem("photograph").title("Photograph"),
     ]);

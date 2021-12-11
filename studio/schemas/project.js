@@ -54,14 +54,19 @@ export default {
       },
     },
     {
-      name: "photos",
-      title: "Photography",
+      name: "artworks",
+      title: "Artwork",
       type: "array",
       of: [
         {
           name: "photo",
           type: "photoReference",
           title: "Photos",
+        },
+        {
+          name: "video",
+          type: "videoReference",
+          title: "Videos",
         },
       ],
     },
