@@ -2,7 +2,7 @@
     <ul class="social__wrapper">
         <li v-for="social in socials" :key="social._key" class="social">
         <a :href="social.url"
-            ><IconBase :icon-name="social.title" width="44" height="44"
+            ><IconBase :icon-name="social.title" width="22" height="22"
             ><component :is="'Icon' + social.title" /></IconBase
         ></a>
         </li>
@@ -37,13 +37,14 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
+  gap: 2rem;
 }
 
 .social {
-  padding-right: 2rem;
-
+  
   & a {
+    padding: 10px;
     color: #6a6052;
   }
 

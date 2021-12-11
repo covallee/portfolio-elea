@@ -1,5 +1,7 @@
 <template>
-  <img :src="imageUrl" :alt="altFromImage" />
+  <picture>
+    <img :src="imageUrl" :alt="altFromImage" />
+  </picture>
 </template>
 
 <script>

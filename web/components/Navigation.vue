@@ -13,7 +13,8 @@
       </button>
     </div>
     <nav>
-      <ul class="nav__inner" :class="{ visible: isBurger }">
+      <div class="nav__inner" :class="{ visible: isBurger }">
+      <ul>
         <li>
           <button class="nav__item" @click="isWorksVisible = !isWorksVisible">
             Works
@@ -59,6 +60,7 @@
       </ul>
       <SocialMedia />
       <div class="nav__copy">Copyright © All rights reserved.</div>
+      </div>
     </nav>
   </div>
 </template>

@@ -1,11 +1,13 @@
 <template>
-  <section class="project__container">
-    <div class="project__desc">
-      <h2 class="title">{{ title }}</h2>
-      <BlockContent v-if="overview" :blocks="overview" />
-    </div>
-    <Slider :photos="photos" />
-  </section>
+  <div class="project">
+    <section class="project__wall">
+      <div class="project__desc">
+        <h1 class="project__title">{{ title }}</h1>
+        <BlockContent v-if="overview" :blocks="overview" />
+      </div>
+      <Slider :artworks="artworks" />
+    </section>
+  </div>
 </template>
 
 <script>
@@ -18,13 +20,16 @@ const query = groq`
   *[_type == "project" && slug.current == $slug][0] {
     ...,
     "id": _id,
-    photos[]{
+    artworks[]{
       photography-> {
         ...,
         poster-> {
           ...,
           asset->
         }
+      },
+      video-> {
+        ...,
       }
     }
   }
@@ -35,11 +40,6 @@ export default {
     Slider,
     BlockContent,
   },
-  // validate({ params, store, query }) {
-  //   return (
-
-  //   )
-  // },
   async asyncData({ params }) {
     return await sanityClient.fetch(query, params)
   },
@@ -47,12 +47,11 @@ export default {
   mounted() {},
   head() {
     return {
-      title: `Project | `,
+      title: this.title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          // content: this.plainTextBio
         },
       ],
     }
@@ -61,13 +60,15 @@ export default {
 </script>
 
 <style scoped>
-/* @import '../../styles/custom-media.css';
-@import '../../styles/custom-properties.css'; */
-
-.project__container {
+.project {
+  display: flex;
+  align-items: center;
+  height: 98vh;
+}
+.project__wall {
   padding: 8rem 2rem;
   box-sizing: border-box;
-  min-height: calc(100% - 72px - 216px);
+  /* min-height: calc(100% - 72px - 216px); */
   display: flex;
   flex-direction: column;
   position: relative;
@@ -78,26 +79,30 @@ export default {
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0.02em;
+
+  & p{
+    padding: 8px 0;
+  }
+}
+
+.project__title {
+  font-size: 1.2rem;
+  padding-bottom: 2rem;
 }
 
 @media (min-width: 640px) {
-  .project__container {
-    padding: calc((100vh - 700px) / 2) 0 calc((100vh - 700px) / 2) 316px;
+  .project__wall {
+    max-height: 710px;
+    /* padding: calc((100vh - 710px) / 2) 0 calc((100vh - 710px) / 2) 316px; */
+    padding: 0 0 0 316px;
     flex-direction: row;
   }
 
   .project__desc {
     min-width: 525px;
+    width: 60em;
     padding: 1rem;
-  }
-}
-
-.bio {
-  /* font-size: var(--font-large-size);
-  line-height: var(--font-large-line-height); */
-
-  @nest & p {
-    margin: 0.25rem 0 0.5rem;
+    flex-shrink: 0;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <section class="project__container">
-    <Slider :photos="mainProject.photos" />
+    <Slider :artworks="mainProject.artworks" />
   </section>
 </template>
 
@@ -16,7 +16,7 @@ const query = groq`
       "imageUrl":image.asset->url
 		},
     mainProject-> {
-      photos[]{
+      artworks[]{
         photography-> {
           ...,
           poster-> {
@@ -93,7 +93,7 @@ export default {
 
 @media (min-width: 640px) {
   .project__container {
-    padding: calc((100vh - 700px) / 2) 0 calc((100vh - 700px) / 2) 316px;
+    padding: calc((90vh - 700px) / 2) 0 calc((90vh - 700px) / 2) 316px;
     flex-direction: row;
   }
 }
