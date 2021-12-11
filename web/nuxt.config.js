@@ -1,11 +1,3 @@
-// import sanityClient from './sanityClient'
-
-// const routesQuery = `
-//   {
-//     "project": *[_type == "project"],
-//   }
-// `
-
 export default {
   /*
    ** Nuxt target
@@ -60,6 +52,19 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', size: '16x16', href: '/favicon16x16.png' },
     ],
+    script: [
+      {
+        hid: 'fathom', // unique identifier
+        src: 'https://cdn.usefathom.com/script.js',
+        site: 'CQXPHGVT',
+        spa: 'auto', // set by fathom
+        defer: 'defer',
+        once: true, // only load once on SSR
+
+        // optional: skip loading script if we aren't in production
+        skip: process.env.NODE_ENV !== 'production'
+      }
+    ]
   },
   /*
    ** Global CSS
@@ -70,20 +75,7 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   // Script tags
-  script: [
-    // Fathom Analytics
-    {
-        // Use your Fathom custom domain if you have one
-        src: 'https://cdn.usefathom.com/script.js',
-        'data-site': 'CQXPHGVT',
-        'defer': true
-    }
-  ],
-    router: {
-      middleware: [
-          'fathom'
-      ]
-  },
+  script: [],
   plugins: [
     {src: '~/plugins/vimeo-player.client.js'}
   ],
