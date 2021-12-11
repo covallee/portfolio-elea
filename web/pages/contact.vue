@@ -52,6 +52,7 @@ export default {
   font-style: normal;
   color: #35495e;
   letter-spacing: 1px;
+  padding: 2rem 0 1rem;
 }
 
 .links {
@@ -78,6 +79,7 @@ export default {
   .title {
     font-weight: 300;
     font-size: 100px;
+    padding: 1rem 0;
   }
 }
 </style>

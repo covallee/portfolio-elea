@@ -38,7 +38,7 @@ export default {
   justify-content: flex-start;
   align-items: center;
   padding: 1rem 0;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .social {

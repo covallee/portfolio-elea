@@ -62,9 +62,8 @@ export default {
 <style scoped>
 .project {
   display: flex;
-  align-items: center;
-  height: 98vh;
 }
+
 .project__wall {
   padding: 8rem 2rem;
   box-sizing: border-box;
@@ -72,6 +71,7 @@ export default {
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
 }
 
 .project__desc {
@@ -91,6 +91,11 @@ export default {
 }
 
 @media (min-width: 640px) {
+  .project {
+    height: 98vh;
+    align-items: center;
+  }
+
   .project__wall {
     max-height: 710px;
     /* padding: calc((100vh - 710px) / 2) 0 calc((100vh - 710px) / 2) 316px; */

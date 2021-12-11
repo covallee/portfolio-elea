@@ -57,9 +57,9 @@ export default {
         hid: 'fathom', // unique identifier
         src: 'https://cdn.usefathom.com/script.js',
         site: 'CQXPHGVT',
-        spa: 'auto', // set by fathom
+        // spa: 'auto',
         defer: 'defer',
-        once: true, // only load once on SSR
+        // once: true,
 
         // optional: skip loading script if we aren't in production
         skip: process.env.NODE_ENV !== 'production'

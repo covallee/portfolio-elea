@@ -61,7 +61,7 @@ export default {
 
 <style scoped>
 .project__container {
-  padding: 8rem 2rem;
+  padding: 8rem 1rem;
   box-sizing: border-box;
   min-height: calc(100% - 72px - 216px);
   display: flex;
@@ -73,7 +73,7 @@ export default {
   font-family: 'Sporting Grotesque', sans-serif;
   font-size: 16px;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 400;
   color: #555;
   line-height: 1.4;
 }
@@ -91,6 +91,7 @@ export default {
   font-style: normal;
   color: #35495e;
   letter-spacing: 1px;
+  padding: 2rem 0 1rem;
 }
 
 .subtitle {
@@ -125,6 +126,7 @@ export default {
   .title {
     font-weight: 300;
     font-size: 100px;
+    padding: 0;
   }
 }
 </style>

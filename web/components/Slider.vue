@@ -46,11 +46,16 @@ img {
   width: 100%;
 }
 .caption {
-  padding-top: 16px;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
 }
 
 .block--video {
   height: 100%;
+}
+
+iframe {
+  width: 100%;
 }
 
 @media (min-width: 640px) {
@@ -65,6 +70,10 @@ img {
   }
   .block--photo {
     height: 100%
+  }
+  .caption {
+    padding-top: 1rem;
+    padding-bottom: 0;
   }
   img {
     width: unset;
